@@ -22,3 +22,11 @@ spec:
                     configMapKeyRef:
                         name: db-config
                         key: db_name
+              volumeMounts:
+              - mountPath: /var/lib/mongodb/data
+                name: mongo-volume-mount
+                subPath: mongo
+            volumes:
+            - name: mongo-volume-mount
+              persistentVolumeClaim:
+                claimName: mongo-pvc                     
