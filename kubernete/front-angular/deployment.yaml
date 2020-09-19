@@ -14,5 +14,6 @@ spec:
             containers:
                 - name: angular-deploy
                   image: DOCKER_IMAGE:TAG
+                  imagePullPolicy: Always
                   ports:
                   - containerPort: 3000
